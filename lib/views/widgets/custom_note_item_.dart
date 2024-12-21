@@ -32,12 +32,15 @@ class CustomNoteItem extends StatelessWidget {
                     color: Colors.black.withOpacity(0.4), fontSize: 15),
               ),
             ),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                FontAwesomeIcons.trash,
-                color: Colors.black,
-                size: 22,
+            trailing: Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  FontAwesomeIcons.trash,
+                  color: Colors.black,
+                  size: 22,
+                ),
               ),
             ),
           ),
