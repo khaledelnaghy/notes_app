@@ -14,7 +14,6 @@ class CustomAppBarBody extends StatelessWidget {
       ),
       Spacer(),
       CustomSearchIcon(),
-      
     ]);
   }
 }
