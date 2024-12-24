@@ -22,7 +22,7 @@ class NotesListView extends StatelessWidget {
             child: CustomNoteItem (),
           );
          }, 
-         itemCount: 10,
+        //  itemCount: 10,
       
          ),
     );
