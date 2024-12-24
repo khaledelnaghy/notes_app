@@ -49,7 +49,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
           ),
           SizedBox(
-            height: 32, 
+            height: 32,
           ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
@@ -58,11 +58,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    var currentData =  DateTime.now();
-                    var formattedCurrentData = DateFormat.yMd().format(currentData);
+                    var currentData = DateTime.now();
+                    var formattedCurrentData =
+                        DateFormat.yMd().format(currentData);
 
                     var noteModel = NoteModel(
-                      title: title!,  
+                      title: title!,
                       subTitle: subtitle!,
                       date: formattedCurrentData,
                       color: Colors.blue.value,
