@@ -6,8 +6,8 @@ import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_views.dart';
 
 class CustomNoteItem extends StatelessWidget {
-  const CustomNoteItem({super.key ,required this.note});
-  final NoteModel note ;
+  const CustomNoteItem({super.key, required this.note});
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,9 @@ class CustomNoteItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>const EditNoteViews(),
+            builder: (context) => EditNoteViews(
+              note: note,
+            ),
           ),
         );
       },
@@ -31,7 +33,7 @@ class CustomNoteItem extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
-               note.title,
+                note.title,
                 style: TextStyle(
                   color: Colors.black,
                   fontFamily: "Poppins",
@@ -41,7 +43,7 @@ class CustomNoteItem extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 22),
                 child: Text(
-                 note.subTitle,
+                  note.subTitle,
                   style: TextStyle(
                       color: Colors.black.withOpacity(0.4), fontSize: 15),
                 ),
@@ -50,7 +52,6 @@ class CustomNoteItem extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 30),
                 child: IconButton(
                   onPressed: () {
-
                     note.delete();
                     BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                   },
@@ -65,7 +66,7 @@ class CustomNoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 35),
               child: Text(
-               note.date,
+                note.date,
                 style: TextStyle(
                     color: Colors.black.withOpacity(0.4), fontSize: 16),
               ),
